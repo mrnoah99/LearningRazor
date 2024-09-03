@@ -1,9 +1,14 @@
 ﻿@page
+@using System.Diagnostics
 @model MyApp.Namespace.ProcessModel
 @{
+    Process[]? procs = ViewData["Processes"] as Process[];
 }
 
 <div>
     <h2>Process Page</h2>
     <h4>@ViewData["Message"]</h4>
+    @foreach (var process in procs!) {
+        <div>Name: @process.ProcessName</div>
+    }
 </div>
