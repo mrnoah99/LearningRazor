@@ -1,0 +1,12 @@
+﻿@page
+@model MyApp.Namespace.DetailsModel
+@using System.Diagnostics
+@{
+    Process? p = ViewData["Proc"] as Process;
+}
+
+<div>
+    <h2>Details of @p!.ProcessName</h2>
+    <p>Process ID: @p!.Id</p>
+    <p>Process Start Time: @p!.StartTime</p>
+</div>

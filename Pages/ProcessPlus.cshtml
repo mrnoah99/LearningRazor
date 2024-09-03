@@ -1,14 +1,14 @@
 ﻿@page
 @using System.Diagnostics
-@model MyApp.Namespace.ProcessModel
+@model MyApp.Namespace.ProcessPlusModel
 @{
-    Process[]? procs = ViewData["Processes"] as Process[];
+    @* Process[]? procs = ViewData["Processes"] as Process[]; *@
 }
 
 <div>
-    <h2>Process Page</h2>
+    <h2>Process+ Page</h2>
     <h4>@ViewData["Message"]</h4>
-    @foreach (var process in procs!) {
+    @foreach (var process in Model.Processes!) {
         <div>Name: <a asp-page="./Details" asp-route-id="@process.Id">@process.ProcessName</a></div>
     }
 </div>
